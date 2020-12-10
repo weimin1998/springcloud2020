@@ -1,0 +1,18 @@
+server:
+  port: 7002
+
+
+eureka:
+  instance:
+    hostname: eureka7002.com # 在hosts文件中配置
+  #hostname: localhost #eureka 服务端的实例名称
+  client:
+    # 自己就是注册中心，不需要向注册中心注册自己
+    register-with-eureka: false
+    #不需要检索服务
+    fetch-registry: false
+    service-url:
+      #eureka server  访问地址
+      # 单机的时候 写自己的访问地址，集群写其他实例的访问地址
+      # 单机 ：  defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://eureka7001.com:7001/eureka/

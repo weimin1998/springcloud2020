@@ -1,0 +1,23 @@
+server:
+  port: 80
+
+
+eureka:
+  client:
+    #注册到 eureka注册中心
+    register-with-eureka: false
+    #是否从 注册中心抓取 已有的注册信息，在集群的时候用到
+    fetch-registry: true
+    service-url:
+      #defaultZone: http://localhost:7001/eureka
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
+
+
+ribbon:
+  ReadTimeout: 5000
+  ConnectTimeout: 5000
+
+logging:
+  level:
+    #feign 日志，以debug级别监控这个接口
+    com.weimin.springcloud.service.PaymentService: debug

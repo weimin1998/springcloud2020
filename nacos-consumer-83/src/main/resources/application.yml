@@ -1,0 +1,14 @@
+server:
+  port: 83
+
+
+spring:
+  application:
+    name: nacos-consumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 123.56.169.57:8848
+
+service-url:
+  nacos-provider-url: http://nacos-provider
