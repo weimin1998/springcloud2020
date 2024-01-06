@@ -11,7 +11,7 @@ import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
 @EnableEurekaClient
-
+// 替换负载均衡规则
 @RibbonClient(name = "CLOUD-PROVIDER-PAYMENT",configuration = RuleConfiguration.class)
 public class OrderMain80 {
     public static void main(String[] args) {
@@ -19,7 +19,7 @@ public class OrderMain80 {
     }
 
     @Bean
-    // 负载均衡
+    // 使得RestTemplate负载均衡，访问服务提供者
     @LoadBalanced
     public RestTemplate restTemplate(){
         return new RestTemplate();

@@ -7,5 +7,6 @@ spring:
     name: cloud-provider-payment
   cloud:
     zookeeper:
-      connect-string: 123.56.169.57:2181
+      connect-string: 192.168.61.105:2181
+      #./zkServer.sh start 启动zk
 
